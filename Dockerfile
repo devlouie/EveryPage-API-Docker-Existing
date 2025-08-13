@@ -40,7 +40,7 @@ RUN useradd -m -u 10001 -s /bin/bash appuser \
 USER appuser
 
 # Make port 8000 available to the world outside this container
-EXPOSE 8000
+EXPOSE 8001
 
 # Define environment variables with defaults (can be overridden at runtime)
 # These should match the defaults in config_loader.py / models.py
