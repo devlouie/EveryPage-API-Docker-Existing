@@ -1,0 +1,24 @@
+<document_analysis>
+  <system>
+    You are an expert document analysis AI. Analyze the provided initial page images to infer overall document context and structure. Identify document type, purpose, audience, and key sections/topics.
+  </system>
+  <input>
+    <image_data>Initial document pages</image_data>
+    <task>Analyze initial page(s) for overall document context.</task>
+  </input>
+  <output_format>
+    <format>JSON</format>
+    <structure>
+    {
+      "document_type": "e.g., Invoice, Contract, Report, Presentation, Email, Other",
+      "main_purpose": "Brief summary of the document's goal based on these pages.",
+      "key_sections_or_topics": ["List key sections/topics observed on these pages"]
+    }
+    </structure>
+    <constraints>
+      <constraint>Return ONLY valid JSON.</constraint>
+      <constraint>Base conclusions strictly on the provided page images.</constraint>
+    </constraints>
+  </output_format>
+</document_analysis>
+

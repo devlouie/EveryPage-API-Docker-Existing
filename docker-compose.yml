@@ -1,0 +1,19 @@
+services:
+  everypage:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - MAX_WORKERS=5
+      - PROCESS_TIMEOUT=60
+      - LOG_LEVEL=INFO
+    volumes:
+      # Optional: Mount for persistent storage of processed documents
+      - everypage_data:/app/output
+    restart: unless-stopped
+
+volumes:
+  everypage_data:
+    # This creates a named volume for persistent storage
