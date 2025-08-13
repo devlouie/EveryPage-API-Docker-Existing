@@ -56,4 +56,4 @@ ENV LOG_LEVEL=INFO
 # Listen on 0.0.0.0 to accept connections from outside the container
 # Updated entry point to main_api:app
 ENTRYPOINT ["/usr/bin/tini", "--"]
-CMD ["uvicorn", "main_api:app", "--host", "0.0.0.0", "--port", "8000", "--proxy-headers"]
+CMD ["uvicorn", "main_api:app", "--host", "0.0.0.0", "--port", "8001", "--proxy-headers"]

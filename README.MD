@@ -16,9 +16,9 @@ Process documents and images page-by-page using ResetData’s OpenAI‑compatibl
 ### Quick start (Docker)
 ```bash
 docker build -t everypage:latest .
-docker run -p 8000:8000 everypage:latest
+docker run -p 8001:8001 everypage:latest
 ```
-Open http://localhost:8000, paste your ResetData key, upload a file, pick JSON or Text, and run.
+Open http://localhost:8001, paste your ResetData key, upload a file, pick JSON or Text, and run.
 
 ### Quick start (Portainer)
 Two clean options:
@@ -39,7 +39,7 @@ Two clean options:
        everypage:
          image: YOURUSER/everypage:latest
          ports:
-           - "8000:8000"
+           - "8001:8001"
          environment:
            - LOG_LEVEL=INFO
            - MAX_WORKERS=5
@@ -62,12 +62,12 @@ Two clean options:
 
 ### API cheatsheet
 - GET `/health`
-  - Example: `curl -H "x-resetdata-key: YOUR_KEY" http://localhost:8000/health`
+  - Example: `curl -H "x-resetdata-key: YOUR_KEY" http://localhost:8001/health`
 - POST `/scan` (multipart/form-data)
   - Fields: `file` (required), `user_prompt` (required), `output_format` (json|text), `use_meta_intelligence` (true|false)
   - Example:
     ```bash
-    curl -X POST http://localhost:8000/scan \
+    curl -X POST http://localhost:8001/scan \
       -H "x-resetdata-key: YOUR_KEY" \
       -F "file=@/path/to/doc.pdf" \
       -F "user_prompt=Summarize key points as JSON" \

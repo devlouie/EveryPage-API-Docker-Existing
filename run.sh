@@ -5,7 +5,7 @@ set -euo pipefail
 
 IMAGE_NAME="everypage-pure:local"
 CONTAINER_NAME="everypage-pure"
-PORT="8000"
+PORT="8001"
 
 echo "[1/4] Checking Docker..."
 if ! command -v docker >/dev/null 2>&1; then
@@ -24,7 +24,7 @@ fi
 echo "[4/4] Running container on port ${PORT}"
 docker run -d \
   --name "${CONTAINER_NAME}" \
-  -p "${PORT}:8000" \
+  -p "${PORT}:8001" \
   -e MAX_WORKERS="5" \
   -e PROCESS_TIMEOUT="90" \
   --restart unless-stopped \
